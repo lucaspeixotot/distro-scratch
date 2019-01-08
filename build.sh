@@ -55,7 +55,7 @@ sudo make install
 ############################### Installing i3blocks dependencies #############################
 go_to_installation_dir
 
-sudo apt install -y rofi fonts-font-awesome
+sudo apt install -y fonts-font-awesome
 
 cd dotfiles/.config/i3blocks
 mkdir -p $HOME/.config/i3blocks
@@ -94,7 +94,7 @@ cd $HOME/.config/
 git clone https://github.com/LukeSmithxyz/wallpapers
 
 ############################### Installing audio/media/touchpad #############################
-sudo apt install -y alsa-base alsa-oss alsa-utils alsa-tools libasound2 libasound2-plugins speech-dispatcher pulseaudio pavucontrol xbacklight
+sudo apt install -y alsa-base alsa-oss alsa-utils alsa-tools libasound2 libasound2-plugins speech-dispatcher pulseaudio pavucontrol xbacklight dkms
 
 ############################### Installing network-manager #############################
 sudo apt install -y network-manager
