@@ -126,6 +126,6 @@ sudo apt install -y scrot
 
 ############################### Installing commom programs #############################
 
-sudo apt install -y chromium-browser
+sudo apt install -y firefox
 sudo apt install -y zathura xsel sxiv poppler-utils
 sudo apt install -y virtualbox-dkms virtualbox-guest-dkms virtualbox-guest-x11
