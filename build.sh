@@ -20,9 +20,9 @@ go_to_installation_dir
 sudo apt install -y i3 i3blocks slim xorg compton
 
 # Installing i3 config
-cd dotfiles/.config/i3
+cd dotfiles/.config/
 mkdir -p $HOME/.config/i3
-cp config $HOME/.config/i3/config
+cp i3 $HOME/.config/ -r
 
 ############################### Installing i3 gaps #############################
 go_to_installation_dir
@@ -77,6 +77,20 @@ sudo apt install -y ranger w3m-img
 mkdir -p $HOME/.config/ranger
 cd dotfiles/.config/ranger
 cp * $HOME/.config/ranger -r
+
+############################### Installing nnn #############################
+sudo apt install pkg-config libncursesw5-dev xsel atool
+go_to_installation_dir
+git clone https://github.com/jarun/nnn
+cd nnn
+git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+make
+sudo make install
+
+go_to_installation_dir
+cd dotfiles/.config
+cp nnn $HOME/.config/ -r
+
 
 ############################### Installing uxvt config #############################
 go_to_installation_dir
