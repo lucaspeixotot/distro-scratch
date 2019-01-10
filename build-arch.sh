@@ -15,7 +15,7 @@ git clone https://github.com/lucaspeixotot/dotfiles
 
 
 ############################### Installing yaourt ########################
-sudo pacman -S --needed basse-devel git wget yajl
+sudo pacman -S --noconfirm --needed base-devel git wget yajl
 cd /tmp
 git clone https://aur.archlinux.org/package-query.git
 cd package-query/
