@@ -13,70 +13,79 @@ go_to_installation_dir
 
 git clone https://github.com/lucaspeixotot/dotfiles
 
-############################### Installing i3 ##################################
+
+############################### Installing yaourt ########################
+sudo pacman -S --needed basse-devel git wget yajl
+cd /tmp
+git clone https://aur.archlinux.org/package-query.git
+cd package-query/
+makepkg -si && cd /tmp/
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt/
+makepkg -si
+
+
+############################### Installing Window and display Manager ########################
 go_to_installation_dir
 
-# Installing packages
-sudo pacman -S --noconfirm compton
+sudo pacman -S --noconfirm i3 dmenu xorg xorg-xinit feh lightdm lightdm-gtk-greeter networkmanager network-manager-applet
 
-# Installing i3 config
-cd dotfiles/.config/
-mkdir -p $HOME/.config/
-cp i3 $HOME/.config/ -r
-
-############################### Installing i3blocks dependencies #############################
-go_to_installation_dir
-
-sudo pacman -S --noconfirm ttf-font-awesome
-
-cd dotfiles/.config/i3blocks
-mkdir -p $HOME/.config/i3blocks
-
-cp config $HOME/.config/i3blocks
-cp scripts $HOME/.config/i3blocks -r
-
-############################### Installing vim #################################
-go_to_installation_dir
-
-cd dotfiles/.scripts
-sh install_vim.sh
-
-############################### Installing nnn #############################
-sudo pacman -S --noconfirm nnn
-
-go_to_installation_dir
-cd dotfiles/.config
-cp nnn $HOME/.config/ -r
-
-
-############################### Installing uxvt config #############################
-go_to_installation_dir
+sudo systemctl enable lightdm.service
 
 cd dotfiles
+cp .profile $HOME/
 cp .xinitrc $HOME/
 cp .Xresources $HOME/
+cp .bashrc $HOME/
+cp .inputrc $HOME/
 
-############################### Installing pywal #############################
+mkdir -p $HOME/.config
+cp .config/i3 $HOME/.config -r
+cp .config/i3blocks $HOME/.config -r
+cp .config/nnn $HOME/.config -r
 
-#installing dependencies
-sudo pacman -S --noconfirm python-pywal feh
-cd $HOME/.config/
-git clone https://github.com/LukeSmithxyz/wallpapers
+############################### Installing st ########################
 
-
-############################### Installing st terminal #############################
 go_to_installation_dir
 
 git clone https://github.com/LukeSmithxyz/st
 cd st
 sudo make install
 
-############################### Installing screenshot #############################
+############################# Installing nnn ########################
+sudo pacman -S --noconfirm nnn atool xsel xclip
+
+############################### Installing wallpappers and fonts ########################
+go_to_installation_dir
+
+sudo pacman -S --noconfirm otf-font-awesome ttf-font-awesome ttf-dejavu ttf-liberation noto-fonts
+
+sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
+sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
+
+cd dotfiles
+sudo cp local.conf /etc/fonts/
+sudo cp freetype2.sh /etc/profile.d/
+
+
+cd $HOME/.config/
+git clone https://github.com/LukeSmithxyz/wallpapers
+
+
+############################### Installing vim ########################
+go_to_installation_dir
+sudo pacman -S --noconfirm gvim
+
+cd dotfiles/.scripts
+sh install_vim.sh
+
+############################### Installing sound ########################
+sudo pacman -S --noconfirm alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio pavucontrol
+
+
+############################### Installing and configure commom programs ########################
+yaourt -S --noconfirm google-chrome zathura sxiv scrot imagemagick htop transmission-gtk
+
 mkdir -p $HOME/Pictures/screenshots
-sudo pacman -S --noconfirm scrot
 
-############################### Installing commom programs #############################
-
-sudo pacman -S --noconfirm google-chrome
-sudo pacman -S --noconfirm zathura xsel sxiv poppler
-#sudo apt install -y virtualbox-dkms virtualbox-guest-dkms virtualbox-guest-x11
