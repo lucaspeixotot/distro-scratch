@@ -58,7 +58,7 @@ sudo pacman -S --noconfirm nnn atool xsel xclip
 ############################### Installing wallpappers and fonts ########################
 go_to_installation_dir
 
-sudo pacman -S --noconfirm otf-font-awesome ttf-font-awesome ttf-dejavu ttf-liberation noto-fonts
+sudo pacman -S --noconfirm otf-font-awesome ttf-dejavu ttf-liberation noto-fonts ttf-linux-libertine ttf-inconsolata
 
 sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
 sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
@@ -82,6 +82,13 @@ sh install_vim.sh
 
 ############################### Installing sound ########################
 sudo pacman -S --noconfirm alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio pavucontrol
+
+
+############################### Installing xbacklight ########################
+sudo pacman -S --noconfirm acpilight
+go_to_installation_dir
+
+sudo cp 90-backlight.rules /etc/udev/rules.d/
 
 
 ############################### Installing and configure commom programs ########################
