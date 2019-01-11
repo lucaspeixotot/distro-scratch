@@ -28,7 +28,7 @@ makepkg -si
 ############################### Installing Window and display Manager ########################
 go_to_installation_dir
 
-sudo pacman -S --noconfirm i3 dmenu xorg xorg-xinit feh lightdm lightdm-gtk-greeter networkmanager network-manager-applet
+sudo pacman -S --noconfirm i3 dmenu xorg xorg-xinit feh lightdm lightdm-gtk-greeter networkmanager network-manager-applet lightdm-gtk-greeter-settings
 
 sudo systemctl enable lightdm.service
 
@@ -92,7 +92,7 @@ sudo cp 90-backlight.rules /etc/udev/rules.d/
 
 
 ############################### Installing and configure commom programs ########################
-yaourt -S --noconfirm google-chrome zathura sxiv scrot imagemagick htop transmission-gtk
+yaourt -S --noconfirm google-chrome zathura sxiv scrot imagemagick htop transmission-gtk clang entr ag cmake compton ctags util-linux minicom
 
 mkdir -p $HOME/Pictures/screenshots
 
