@@ -108,17 +108,17 @@ cd $HOME/.config/
 git clone https://github.com/LukeSmithxyz/wallpapers
 
 ############################### Installing audio/media/touchpad #############################
-sudo apt install -y alsa-base alsa-oss alsa-utils alsa-tools libasound2 libasound2-plugins speech-dispatcher pulseaudio pavucontrol xbacklight dkms
+#sudo apt install -y alsa-base alsa-oss alsa-utils alsa-tools libasound2 libasound2-plugins speech-dispatcher pulseaudio pavucontrol xbacklight dkms
 
 ############################### Installing network-manager #############################
 sudo apt install -y network-manager
 
 ############################### Installing st terminal #############################
-go_to_installation_dir
+#go_to_installation_dir
 
-git clone https://github.com/LukeSmithxyz/st
-cd st
-sudo make install
+#git clone https://github.com/LukeSmithxyz/st
+#cd st
+#sudo make install
 
 ############################### Installing screenshot #############################
 mkdir -p $HOME/Pictures/screenshots
@@ -126,6 +126,6 @@ sudo apt install -y scrot
 
 ############################### Installing commom programs #############################
 
-sudo apt install -y firefox
+#sudo apt install -y firefox
 sudo apt install -y zathura xsel sxiv poppler-utils
 sudo apt install -y virtualbox-dkms virtualbox-guest-dkms virtualbox-guest-x11

@@ -43,6 +43,7 @@ mkdir -p $HOME/.config
 cp .config/i3 $HOME/.config -r
 cp .config/i3blocks $HOME/.config -r
 cp .config/nnn $HOME/.config -r
+cp .config/ranger $HOME/.config -r
 
 ############################### Installing st ########################
 
@@ -53,7 +54,7 @@ cd st
 sudo make install
 
 ############################# Installing nnn ########################
-sudo pacman -S --noconfirm nnn atool xsel xclip
+sudo pacman -S --noconfirm nnn atool xsel xclip ranger
 
 ############################### Installing wallpappers and fonts ########################
 go_to_installation_dir
